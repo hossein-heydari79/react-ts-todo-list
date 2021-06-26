@@ -1,3 +1,85 @@
 .App {
-    color: red;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main {
+    width: 55rem;
+    height: 60rem;
+    border: 0.2rem dashed rgba(0, 0, 0, 0.644);
+    border-radius: 0.7rem;
+}
+
+.form {
+    width: 80%;
+    margin: 3rem 0;
+}
+
+.input {
+    width: 32rem;
+    height: 4.8rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.623);
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    outline: none;
+    font-size: 1.7rem;
+    transition: 0.2s all linear;
+}
+
+.input::placeholder {
+    font-size: 1.6rem;
+    color: gray;
+}
+
+.input:focus {
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.55);
+}
+
+.btn {
+    height: 4.8rem;
+    width: 7rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.623);
+    border-radius: 1.5rem;
+    outline: none;
+    font-size: 1.7rem;
+    transition: 0.2s all linear;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.cards {
+    width: 80%;
+    font-size: 1.7rem;
+    animation: 0.5s fadeIn linear;
+}
+
+.icons {
+    width: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.2rem;
+}
+
+.div-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
