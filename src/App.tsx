@@ -1,19 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 
 import "./App.scss";
 
-function App() {
-  interface data {
-    text: string;
-    editMode: boolean;
-  }
+interface data {
+  text: string;
+  editMode: boolean;
+}
 
+function App() {
   const [value, setValue] = useState<string>("");
   const [data, setData] = useState<data[]>([]);
   const [btnValue, setBtnValue] = useState<string>("ADD");
+  const input = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     toast.success("Welcome To React-Typescript!", {
@@ -25,9 +26,12 @@ function App() {
       draggable: true,
       progress: undefined,
     });
+
+    input.current?.focus();
   }, []);
 
   function set() {
+    input.current?.focus();
     let index = data.findIndex((item) => item.editMode === true);
 
     if (value === "" || value === " ") {
@@ -84,6 +88,7 @@ function App() {
   }
 
   function chandeEditMode(index: number) {
+    input.current?.focus();
     let newData = [...data];
     newData[index].editMode = true;
     setValue(newData[index].text);
@@ -93,6 +98,7 @@ function App() {
   }
 
   function remove(index: number) {
+    input.current?.focus();
     let newData = [...data];
 
     newData.splice(index, 1);
@@ -127,6 +133,7 @@ function App() {
             className="input"
             onChange={get}
             value={value}
+            ref={input}
           />
           <button className="btn" onClick={set}>
             {btnValue}
