@@ -30,7 +30,7 @@ function App() {
   function set() {
     let index = data.findIndex((item) => item.editMode === true);
 
-    if (value == "" || value == " ") {
+    if (value === "" || value === " ") {
       toast.error("Fill in the field!", {
         position: "bottom-left",
         autoClose: 5000,
@@ -41,7 +41,7 @@ function App() {
         progress: undefined,
       });
     } else {
-      if (data.length == 0 || index == -1) {
+      if (data.length === 0 || index === -1) {
         setData([
           ...data,
           {
