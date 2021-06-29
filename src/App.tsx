@@ -16,7 +16,7 @@ function App() {
   const [btnValue, setBtnValue] = useState<string>("ADD");
 
   useEffect(() => {
-    toast.success("Welcome To React-Typescripts!", {
+    toast.success("Welcome To React-Typescript!", {
       position: "bottom-left",
       autoClose: 5000,
       hideProgressBar: false,
